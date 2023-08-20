@@ -1,0 +1,299 @@
+:root {
+  --primary: #fffb00;
+  --bg: #0000ca;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Hind Siliguri", sans-serif;
+  background-color: #ffffff;
+  color: var(--bg);
+  min-height: 2000px;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 7%;
+  background-color: var(--bg);
+  border-bottom: 1px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  height: 4rem;
+  width: 9.3rem;
+}
+
+.navbar .navbar-nav a {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav ::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+/* just p */
+.navbar .navbar-nav p {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav p:hover {
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.navbar .navbar-nav ::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav p:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #ffffff;
+  margin: 0 0.5rem;
+}
+
+#hamburger {
+  display: none;
+}
+
+/* about sections */
+.about {
+  padding: 8rem 7% 1.4rem;
+  color: rgb(0, 0, 0);
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: bolder;
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* media queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    background-color: #00008a;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.4s;
+  }
+
+  .navbar .navbar-nav.active {
+    left: 0;
+  }
+
+  .navbar .navbar-nav a {
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  /*just p*/
+  .navbar .navbar-nav p {
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .navbar .navbar-nav p::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav p:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* hero section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../image/cementpad.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 27%;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(0deg, #ffffff 5%, rgba(255, 255, 255, 0) 50%);
+}
+
+.hero .content {
+  color: #ffff;
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: beige;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 1);
+  line-height: 1.1;
+}
+
+.hero .content h1 span {
+  color: #fffb00;
+}
+
+.hero .content p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  line-height: 1.1;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 1);
+}
+
+/* .hero .content .cta .in-cta { */
+
+#ctaButton {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: beige;
+  background-color: var(--bg);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 1);
+  cursor: pointer;
+}
+
+#ctaButton:hover {
+  background-color: #00008a;
+}
